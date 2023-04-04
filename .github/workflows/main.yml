@@ -15,18 +15,18 @@ jobs:
   check-php-files:
     name: Check PHP files
     runs-on: ubuntu-latest
-
+    
     steps:
       - name: Check out Git repository
         uses: actions/checkout@main
-      
+      # This stell will install PHP that is needed for the linter
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: "8.2"
           coverage: none
           tools: phpcs
-
+      # This step will check on de PSR PHP standards
       - name: PHP Linter
         uses: wearerequired/lint-action@v2
         with:
@@ -36,6 +36,6 @@ jobs:
           php_codesniffer: true
           # Optional, add the PSR12 PHP style guidelines
           php_codesniffer_args: "--standard=PSR12"
-
+      # This step will check for var_dump that are forgotten
       - name: Check for var_dumps
         uses: umutphp/php-var-dump-check-action@v1
