@@ -1,12 +1,20 @@
 <?php
 
-$name = $_GET['name'];
-$surname = $_GET['surname'];
-
-function makeWelcomeMessage($name, $surname){
-    $result = 'Hello, ' . $name . ' ' . $surname;
+/**
+ * Show simple message
+ */
+function makeWelcomeMessage($name, $surname)
+{
+    if (!empty($name) && !empty($surname)) {
+        $result = 'Hello, ' . $name . ' ' . $surname;
+    } else {
+        $result = 'Hello, visitor!';
+    }
 
     return $result;
 }
 
-echo makeWelcomeMessage($name, $surname);
+function wrongDoing()
+{
+    var naam = 't';
+}

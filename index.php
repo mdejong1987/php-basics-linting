@@ -9,10 +9,20 @@
 <body>
     <h1>PHP Basic Linting</h1>
     <hr/>
-    <form action="controller/getFormData.php" method="get">
+    <form action="index.php" method="get">
         <input type="text" name="name" placeholder="Naam" />
         <input type="text" name="surname" placeholder="Voornaam" />
         <input type="submit" value="Versturen" />
     </form>
+    <?php
+    require_once 'controller/getFormData.php';
+
+    if (isset($_GET['name']) && isset($_GET['surname'])) {
+        $name = $_GET['name'];
+        $surname = $_GET['surname'];
+
+        echo makeWelcomeMessage($name, $surname);
+    }
+    ?>
 </body>
 </html>
