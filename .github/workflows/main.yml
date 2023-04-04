@@ -13,8 +13,8 @@ permissions:
   checks: write
   
 jobs:
-  run-linters:
-    name: Run Linters
+  run-php-linter:
+    name: Run PHP Linter
     runs-on: ubuntu-latest
 
     steps:
@@ -28,7 +28,7 @@ jobs:
           coverage: none
           tools: phpcs
 
-      - name: Run Linters
+      - name: Run PHP Linter
         uses: wearerequired/lint-action@v2
         with:
           # Optional, if true than build will pass with errors. If false than build will not pass with errors
@@ -37,3 +37,12 @@ jobs:
           php_codesniffer: true
           # Optional, add the PSR12 PHP style guidelines
           php_codesniffer_args: "--standard=PSR12"
+  run-vardump-check:
+    name: Run PHP var_dump check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check var_dump
+        uses: umutphp/php-var-dump-check-action@v1
+        with:
+          extensions: 'php'
