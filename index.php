@@ -17,10 +17,10 @@
     <?php
         require_once 'controller/getFormData.php';
 
-        $name = $_GET['name'];
-        $surname = $_GET['surname'];
+        if(isset($_GET['name']) && isset($_GET['surname'])){
+            $name = $_GET['name'];
+            $surname = $_GET['surname'];
 
-        if(!empty($name) && !empty($surname)){
             echo makeWelcomeMessage($name, $surname);
         }
     ?>
