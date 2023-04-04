@@ -5,7 +5,12 @@
  */
 function makeWelcomeMessage($name, $surname)
 {
-    $result = 'Hello, ' . $name . ' ' . $surname;
+    if(!empty($name) && !empty($surname)){
+        $result = 'Hello, ' . $name . ' ' . $surname;
+    } else {
+        $result = 'Hello, visitor!';
+    }
+    
 
     return $result;
 }
