@@ -1,5 +1,4 @@
 name: Github Actions PHP file checker
-run-name: Check PHP files
 
 on:
   push:
