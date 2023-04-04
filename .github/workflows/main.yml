@@ -1,5 +1,5 @@
-name: Curio Keuzendeel DevOps
-run-name: Lint PHP code
+name: Github Actions PHP file checker
+run-name: Check PHP files
 
 on:
   push:
@@ -13,8 +13,8 @@ permissions:
   checks: write
   
 jobs:
-  run-php-linter:
-    name: Run PHP Linter
+  check-php-files:
+    name: Check PHP files
     runs-on: ubuntu-latest
 
     steps:
@@ -28,7 +28,7 @@ jobs:
           coverage: none
           tools: phpcs
 
-      - name: Run PHP Linter
+      - name: PHP Linter
         uses: wearerequired/lint-action@v2
         with:
           # Optional, if true than build will pass with errors. If false than build will not pass with errors
@@ -37,6 +37,6 @@ jobs:
           php_codesniffer: true
           # Optional, add the PSR12 PHP style guidelines
           php_codesniffer_args: "--standard=PSR12"
-          
-      - name: Check var_dump
+
+      - name: Check for var_dumps
         uses: umutphp/php-var-dump-check-action@v1
