@@ -1,0 +1,39 @@
+name: Curio Keuzendeel DevOps
+run-name: Lint PHP code
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+    
+permissions:
+  checks: write
+  
+jobs:
+  run-linters:
+    name: Run Linters
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@main
+      
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.2"
+          coverage: none
+          tools: phpcs
+
+      - name: Run Linters
+        uses: wearerequired/lint-action@v2
+        with:
+          # Optional, if true than build will pass with errors. If false than build will not pass with errors
+          continue_on_error: true
+          # Enable PHP codesniffer linter
+          php_codesniffer: true
+          # Optional, add the PSR12 PHP style guidelines
+          php_codesniffer_args: "--standard=PSR12"
