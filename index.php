@@ -19,9 +19,7 @@
 
     if (isset($_GET['name']) && isset($_GET['surname'])) {
         $name = $_GET['name'];
-        $surname = $_GET['surname'];\
-
-        var_dump($name);
+        $surname = $_GET['surname'];
 
         echo makeWelcomeMessage($name, $surname);
     }

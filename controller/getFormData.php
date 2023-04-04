@@ -5,7 +5,7 @@
  */
 function makeWelcomeMessage($name, $surname)
 {
-    if(!empty($name) && !empty($surname)){
+    if (!empty($name) && !empty($surname)) {
         $result = 'Hello, ' . $name . ' ' . $surname;
     } else {
         $result = 'Hello, visitor!';
@@ -14,8 +14,7 @@ function makeWelcomeMessage($name, $surname)
     return $result;
 }
 
-function wrongDoing(){
-    var_dump('test');
-
-    var naam = 't'
+function wrongDoing()
+{
+    var naam = 't';
 }
