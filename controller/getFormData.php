@@ -13,3 +13,9 @@ function makeWelcomeMessage($name, $surname)
 
     return $result;
 }
+
+function wrongDoing(){
+    var_dump('test');
+
+    var naam = 't'
+}
