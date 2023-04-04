@@ -10,7 +10,6 @@ function makeWelcomeMessage($name, $surname)
     } else {
         $result = 'Hello, visitor!';
     }
-    
 
     return $result;
 }
