@@ -15,14 +15,14 @@
         <input type="submit" value="Versturen" />
     </form>
     <?php
-        require_once 'controller/getFormData.php';
+    require_once 'controller/getFormData.php';
 
-        if(isset($_GET['name']) && isset($_GET['surname'])){
-            $name = $_GET['name'];
-            $surname = $_GET['surname'];
+    if (isset($_GET['name']) && isset($_GET['surname'])) {
+        $name = $_GET['name'];
+        $surname = $_GET['surname'];
 
-            echo makeWelcomeMessage($name, $surname);
-        }
+        echo makeWelcomeMessage($name, $surname);
+    }
     ?>
 </body>
 </html>
