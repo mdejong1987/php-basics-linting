@@ -13,8 +13,3 @@ function makeWelcomeMessage($name, $surname)
 
     return $result;
 }
-
-function wrongDoing()
-{
-    var naam = 't';
-}
