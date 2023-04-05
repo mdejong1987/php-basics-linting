@@ -17,4 +17,6 @@ function makeWelcomeMessage($name, $surname)
 function wrongDoing()
 {
     var naam = 't';
+
+    var_dump('test');
 }
