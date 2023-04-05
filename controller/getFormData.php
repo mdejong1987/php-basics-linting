@@ -20,3 +20,7 @@ function wrongDoing()
 
     var_dump('test');
 }
+
+function anotherOne(){
+    v test = "df"
+}
