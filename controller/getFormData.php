@@ -13,14 +13,3 @@ function makeWelcomeMessage($name, $surname)
 
     return $result;
 }
-
-function wrongDoing()
-{
-    var naam = 't';
-
-    var_dump('test');
-}
-
-function anotherOne(){
-    v test = "df"
-}
